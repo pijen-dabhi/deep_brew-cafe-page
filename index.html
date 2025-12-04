@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Brussels Brewery — Home</title>
+
+  <!-- Google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">DEEP BREW HOUSE</div>
+      <nav class="main-nav">
+        <a href="#feature-section">About</a>
+        <a href="#locations">Locations</a>
+        <a href="#contact">Contact</a>
+       <a class="pr" href="https://wa.me/19999999999?text=Hi%20I%20want%20to%20order" target="_blank"> <button class="btn-pill">Order Online</button></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-overlay"></div>
+
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1>Brewed To Perfection,<br/>Served With Love</h1>
+          <p class="lead">
+            Indulge in handcrafted coffee, freshly baked pastries, and a welcoming atmosphere designed to inspire and unwind.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/19999999999?text=Hi%20I%20want%20to%20order" target="_blank">Order Online</a>
+            <a class="btn btn-ghost" href="#locations">Find a Location</a>
+          </div>
+        </div>
+        <!-- decorative right-side image is background; keep this empty div for layout alignment on wide screens -->
+        <div class="hero-image-placeholder" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- ======================
+     FEATURE SECTION
+======================= -->
+<section class="feature-section" id="feature-section">
+  <div class="container feature-grid">
+
+    <!-- LEFT FEATURE -->
+    <div class="feature-card">
+      <img src="cof1.jpg" alt="Coffee packaging" class="feature-img">
+      <div class="feature-text">
+        <h2>Handmade Just For You</h2>
+        <p>
+          Our organically grown coffee beans are roasted over an open flame in a 
+          one-of-a-kind brick roaster. There's nothing quite like a cup of Brussels Brewery coffee.
+        </p>
+        <a href="#" class="btn small-btn">View our menu →</a>
+      </div>
+    </div>
+
+    <!-- RIGHT FEATURE -->
+    <div class="feature-card">
+      <div class="feature-text">
+        <h2>Made In Brussels</h2>
+        <p>
+          Welcome to Brussels Brewery, where the charm of Brussels meets the aroma 
+          of freshly brewed coffee. Our café is a cozy haven where friends gather, ideas spark, and every sip tells a story.
+        </p>
+        <a href="#" class="btn small-btn">Learn more →</a>
+      </div>
+      <img src="cof2.jpg" alt="Café interior" class="feature-img">
+    </div>
+
+  </div>
+</section>
+
+<!-- ======================
+     SOCIAL BAR
+======================= -->
+<section class="social-bar">
+  <div class="container social-inner">
+
+    <div class="social-item">
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <div>
+        <strong>#BrusselsCoffee</strong><br>
+        @deepbrewhouse
+      </div>
+    </div>
+
+    <div class="social-item">
+    <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+      <div>
+        <strong>Follow Us</strong><br>
+        deepbrewhouse
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ======================
+     GALLERY STRIP
+======================= -->
+<section class="gallery-strip">
+  <img src="gallary1.jpg" alt="">
+  <img src="gallary2.jpg" alt="">
+  <img src="gallary3.jpg" alt="">
+</section>
+
+  </main>
+
+  <script>
+    // small script to set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- ======================
+     LOCATIONS SECTION
+======================= -->
+<section class="locations" id="locations">
+  <h2 class="section-title">Locations</h2>
+
+  <div class="container locations-grid">
+
+    <div class="location-box">
+      <h3>Brussels</h3>
+      <div class="underline"></div>
+      <p>Rue du Midi 45, 1000</p>
+      <p>Bruxelles, Belgium</p>
+    </div>
+
+    <div class="location-box">
+      <h3>Anderlecht</h3>
+      <div class="underline"></div>
+      <p>Pl. De Linde 27, 1070</p>
+      <p>Anderlecht, Belgium</p>
+    </div>
+
+    <div class="location-box">
+      <h3>Machelen</h3>
+      <div class="underline"></div>
+      <p>Dorpsplein 2, 1830</p>
+      <p>Machelen, Belgium</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="contact-section" id="contact">
+    <h2>Contact Us</h2>
+    <p class="contact-subtitle">We’d love to hear from you. Reach out anytime!</p>
+
+    <div class="contact-container">
+
+        <!-- Left side: Contact Form -->
+        <form class="contact-form">
+            <div class="form-group">
+                <label>Your Name</label>
+                <input type="text" placeholder="Enter your name" required>
+            </div>
+
+            <div class="form-group">
+                <label>Your Email</label>
+                <input type="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+                <label>Your Message</label>
+                <textarea placeholder="Write your message..." required></textarea>
+            </div>
+
+            <button type="submit" class="contact-btn">Send Message</button>
+        </form>
+
+        <!-- Right side: Contact Info -->
+        <div class="contact-info">
+            <h3>Get in Touch</h3>
+
+            <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+            <p><i class="fa-solid fa-envelope"></i> info@brusselsbrewery.com</p>
+            <p><i class="fa-solid fa-location-dot"></i> Rue du Midi 45, Brussels, Belgium</p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ======================
+     NEWSLETTER SECTION
+======================= -->
+<section class="newsletter">
+  <div class="container newsletter-grid">
+
+    <!-- Logo + tagline -->
+    <div class="footer-brand">
+      <!-- <img src="logo.png" class="footer-logo" alt="Brussels Brewery"> -->
+       DEEP BREW HOUSE
+      <p>Brewed To Perfection, Served With Love</p>
+
+      <div class="social-icons">
+        <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+    <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+    <a href="#"><i class="fa-brands fa-google"></i></a>
+      </div>
+    </div>
+
+    <!-- Newsletter form -->
+    <div class="newsletter-right">
+      <h3>Join our newsletter to receive exclusive updates, and news!</h3>
+
+      <form class="newsletter-form">
+        <input type="email" placeholder="Enter Your Email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+  </div>
+
+  <div class="footer-links container">
+    <a href="#">Privacy</a>
+    <a href="#">Terms</a>
+    <a href="#">Cookies</a>
+  </div>
+
+</section>
+  <footer class="site-footer">
+    <hr />
+    <div class="footer-bottom">
+        <p>©2024 Deep Brew House. All Rights Reserved.</p>
+        <p>Powered by <span>CMDigital</span></p>
+    </div>
+</footer>
+
+</body>
+</html>
