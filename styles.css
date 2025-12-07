@@ -49,14 +49,46 @@ body{
 }
 .main-nav{display:flex;gap:18px;align-items:center}
 .main-nav a{font-size:14px;color:var(--muted);text-decoration:none}
-.btn-pill{
-  background:var(--accent);
-  color:white;
-  padding:8px 14px;
-  border-radius:12px;
-  border:none;
-  cursor:pointer;
+.main-nav a {
+  font-size: 14px;
+  color: var(--muted);
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: 0.3s;
 }
+/* remove hover effect from links that wrap a button */
+.main-nav a.pr:hover {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+}
+
+
+.main-nav a:hover {
+  background: rgba(91, 66, 59, 0.12); /* accent faded */
+  color: var(--accent);
+}
+
+.btn-pill {
+  background: var(--accent);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: 
+    background .3s ease,
+    box-shadow .25s ease;
+}
+
+/* Hover — NO movement */
+.btn-pill:hover {
+  background: rgba(0,0,0,0.15);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.18);
+}
+
+
 
 /* HERO */
 .hero{
@@ -115,18 +147,40 @@ body{
 
 /* buttons */
 .hero-actions{display:flex;gap:12px;align-items:center}
-.btn{
-  text-decoration:none;
-  display:inline-block;
-  padding:12px 18px;
-  border-radius:8px;
-  font-weight:600;
-  border:1px solid transparent;
+.btn {
+  text-decoration: none;
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  transition: 
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* Coffee Glow Hover (Option 3) */
+.btn:hover {
+  background: transparent;
+  color: var(--accent);
+  border-color: var(--accent);
+  box-shadow: inset 0 0 12px rgba(91,66,59,0.5); /* soft coffee glow */
 }
 
 .btn-primary{
-  background:var(--accent);
-  color:white;
+  background: var(--accent);
+  color: white;
+  border: 1px solid var(--accent);
+  transition: 0.25s ease;
+}
+
+.btn-primary:hover{
+  background: transparent;
+  color: var(--accent);
+  border-color: var(--accent);
+  box-shadow: inset 0 0 12px rgba(91,66,59,0.5);
 }
 
 
@@ -141,6 +195,69 @@ body{
   width:100%;
   min-height:360px;
 }
+
+/* Hide hamburger by default */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: var(--accent, #5b423b);
+}
+
+
+/* MOBILE MENU */
+/* MOBILE MENU */
+@media (max-width: 768px) {
+
+  /* Hide desktop menu initially */
+  .main-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 260px;
+    height: 100vh;
+    background: #ffffff;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 100px 25px;
+    gap: 25px;
+    transition: right 0.35s ease;
+    box-shadow: -3px 0 18px rgba(0,0,0,0.2);
+    z-index: 9999;
+    display: flex;
+  }
+
+  /* Make the links clearly visible */
+  .main-nav a {
+    color: var(--accent);
+    font-size: 20px;
+    display: block;
+  }
+
+  /* Show menu when open */
+  .main-nav.open {
+    right: 0;
+  }
+
+  /* Show hamburger icon */
+ .menu-toggle {
+    display: block;
+    position: absolute;   /* ← FIX 1 */
+    top: 22px;            /* ← FIX 2 */
+    right: 22px;          /* ← FIX 3 */
+    z-index: 10000;
+    color: var(--accent);
+    font-size: 32px;
+}
+
+  /* Fix hero overlap issue */
+  .site-header {
+    z-index: 10000;
+  }
+}
+
 
 /* footer */
 .site-footer {
@@ -180,7 +297,7 @@ body{
 @media (max-width:520px){
   .hero-text h1{font-size:32px}
   .container{padding:0 16px}
-  .main-nav a{display:none}
+
   .btn-pill{padding:6px 10px;font-size:13px}
 }
 /* ================================
@@ -229,7 +346,20 @@ body{
   color: #eee;
   text-decoration: none;
   font-size: 14px;
+  display: inline-block;
+  
+  /* smooth transitions like your btn */
+  transition: ease-in-out
 }
+
+.small-btn:hover {
+  background: rgba(255,255,255,0.12);   /* soft light overlay */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15); /* soft shadow */
+  color: white;                           /* clean readable text */
+}
+
+
+
 
 /* ================================
    SOCIAL BAR
@@ -384,7 +514,13 @@ body{
   border-radius: 8px;
   font-size: 16px;
   cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
 }
+
+.newsletter-form button:hover {
+  background: #be9671;
+}
+
 
 /* Footer links */
 .footer-links {
@@ -398,6 +534,11 @@ body{
   color: #b3a38e;
   text-decoration: none;
   font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #e3c7a7; /* lighter/beige highlight */
 }
 
 .footer-line {
